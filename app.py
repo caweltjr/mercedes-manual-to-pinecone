@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from pinecone import Pinecone
+from pinecone import Pinecone  # Ensure this works
 from openai import OpenAI
 import webbrowser
 from PyPDF2 import PdfReader
@@ -9,10 +9,11 @@ import re
 
 app = Flask(__name__, static_folder='static')
 
-pc = Pinecone(api_key="PINECONE_API_KEY")
+# Initialize Pinecone with environment variable
+pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
 index_name = "novel-data"
 pinecone_index = pc.Index(index_name)
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))  # Use env var
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 # PDF loader with chunking and page-specific image extraction
 def load_pdf(pdf_path, prefix=""):
