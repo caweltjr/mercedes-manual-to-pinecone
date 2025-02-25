@@ -1,6 +1,6 @@
 Flask==3.0.2
-pinecone==6.0.1  # Matches the working version
-openai==1.40.0
+pinecone==6.0.1
+openai==1.12.0  # Downgrade to a known stable version
 PyPDF2==3.0.1
 pdf2image==1.17.0
 gunicorn==22.0.0
