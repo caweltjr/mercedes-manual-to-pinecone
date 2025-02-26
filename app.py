@@ -9,6 +9,7 @@ import re
 
 app = Flask(__name__, static_folder='static')
 # Force redeploy to kill stuck process - Feb 25, 2025 3:23 PM PST
+# Force rebuild Feb 25, 2025 8:24 PM PST
 
 # Initialize Pinecone with environment variable
 pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
