@@ -65,7 +65,7 @@ def load_pdf(pdf_path, prefix=""):
     pinecone_index.upsert(vectors=vectors)
     print(f"Uploaded {len(vectors)} vectors from {pdf_path} with {len(image_paths)} images")
 
-# Load Mercedes manual—run locally once, not on deploy
+# Load Mercedes manualâ€”run locally once, not on deploy
 # load_pdf("C:/Mercedes/23MercedesManual.pdf", prefix="merc_")
 
 @app.route("/", methods=["GET", "POST"])
