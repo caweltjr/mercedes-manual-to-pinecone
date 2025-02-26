@@ -4,8 +4,11 @@ from openai import OpenAI
 import webbrowser
 from PyPDF2 import PdfReader
 import os
+
 from pdf2image import convert_from_path
 import re
+import subprocess
+subprocess.run(["pip", "install", "openai==1.12.0", "--force-reinstall", "--no-cache-dir"], check=True)
 
 app = Flask(__name__, static_folder='static')
 # Force redeploy to kill stuck process - Feb 25, 2025 3:23 PM PST
